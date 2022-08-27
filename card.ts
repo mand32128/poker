@@ -1,16 +1,16 @@
-const CardType = {
+export const CardType = {
     NORMAL: 'normal',
     JOKER: 'joker',
 } as const;
 
-const Suit = {
+export const Suit = {
     SPADE: 'spade',
     HEART: 'heart',
     DIAMOND: 'diamong',
     CLUB: 'club',
 } as const;
 
-const Rank = {
+export const Rank = {
     ACE: 1,
     TWO: 2,
     THREE: 3,
@@ -30,7 +30,7 @@ type CardType = typeof CardType[keyof typeof CardType];
 type Suit = typeof Suit[keyof typeof Suit];
 type Rank = typeof Rank[keyof typeof Rank];
 
-class Card {
+export class Card {
     constructor(
         private type: CardType,
         private suit: Suit,
