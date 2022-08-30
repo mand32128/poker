@@ -26,9 +26,9 @@ const Rank = {
     KING: 13,
 } as const;
 
-type CardType = typeof CardType[keyof typeof CardType];
-type Suit = typeof Suit[keyof typeof Suit];
-type Rank = typeof Rank[keyof typeof Rank];
+export type CardType = typeof CardType[keyof typeof CardType];
+export type Suit = typeof Suit[keyof typeof Suit];
+export type Rank = typeof Rank[keyof typeof Rank];
 
 type Card = {
     cardType: CardType,
@@ -36,7 +36,7 @@ type Card = {
     rank?: Rank,
 };
 
-class Deck {
+export class Deck {
     // 山札
     private remainingCards: Card[] = [];
     // 手札
