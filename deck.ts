@@ -37,15 +37,27 @@ type Card = {
 };
 
 class Deck {
-    constructor(
-        private remainingCards: Card[],
-        private hand: Card[]
-    ) {
+    // 山札
+    private remainingCards: Card[] = [];
+    // 手札
+    private hand: Card[] = [];
 
+    constructor() {
+        // ジョーカー2枚を追加
+        for (let i = 0; i < 2; i++) this.remainingCards.push({ cardType: CardType.JOKER });
+        // ノーマルカード計52枚を追加
+        for (const suit of Object.values(Suit)) {
+            for (const rank of Object.values(Rank)) {
+                this.remainingCards.push({
+                    cardType: CardType.NORMAL,
+                    suit: suit,
+                    rank: rank,
+                })
+            }
+        }
     }
 }
 
-// これを参考にループ処理を実装
-// for (const value of Object.keys(card.CardType)) {
-//     console.log(value);
-// }
+// デッキの中身を見るデバッグ出力
+const deck = new Deck();
+console.log(deck);
