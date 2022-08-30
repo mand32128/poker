@@ -37,7 +37,12 @@ type Card = {
 };
 
 class Deck {
-    private remainingCards: card.Card[];
+    constructor(
+        private remainingCards: Card[],
+        private hand: Card[]
+    ) {
+
+    }
 }
 
 // これを参考にループ処理を実装
