@@ -55,6 +55,23 @@ class Deck {
                 })
             }
         }
+        // 手札5枚をランダムに取り出し
+        this.draw(5);
+    }
+
+    /**
+     * 山札からカードを引いて手札に入れる
+     * @param numOfDrawing 山札から引くカードの枚数
+     */
+    draw(numOfDrawing: number): void {
+        for (let i = 0; i < numOfDrawing; i++) {
+            const drawingCard = this.remainingCards.splice(Math.floor(Math.random() * this.remainingCards.length), 1);
+            this.hand.push({
+                cardType: drawingCard[0].cardType,
+                suit: drawingCard[0].suit,
+                rank: drawingCard[0].rank,
+            });
+        }
     }
 }
 
