@@ -32,8 +32,8 @@ type Rank = typeof Rank[keyof typeof Rank];
 
 type Card = {
     cardType: CardType,
-    suit: Suit,
-    rank: Rank,
+    suit?: Suit,
+    rank?: Rank,
 };
 
 class Deck {
